@@ -32,6 +32,8 @@ Files it contains:
 
 - Add properties to pokemon class
 
+- Add an easter egg where players can download a file with a pokemon card
+
 ## Data structure
 Classes and methods definition.
 

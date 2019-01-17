@@ -12,11 +12,22 @@ body {
   margin: 0;
   padding: 0;
 }
+h1{
+  margin:0;
+}
 
 /******Style Header*********/
+.header{
+  height: 5rem;
+}
 .nav{
+  height:100%;
+  padding-top:5px;
   display:flex;
   justify-content: space-around;
+  align-items: center;
+  background-color: #e74c3c;
+  
 }
 .nav ul{
   width:10%;
@@ -24,10 +35,22 @@ body {
   justify-content:space-around;
   list-style: none;
 }
+
+
+
+/**********Main Style **********/
 .main{
   width: 50%;
-  margin: 0 auto;
+  margin: 3rem auto 1rem;
   text-align: center;
+}
+.startButton{
+  border-radius: 6px;
+  background-color: #e74c3c;
+  border: none;
+  width: 50%;
+  height: 40px;
+
 }
 
 
