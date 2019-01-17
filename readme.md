@@ -20,7 +20,17 @@ Files it contains:
 
 
 ## Backlog
+- Make the same navbar fixed for every screen, with title and rules, highscore icons
 
+- Put my twitter fixed in the bottom as a maker
+
+- Put my face in ascci in the html
+
+- Put a failed button to show all the pokemons names you failed
+
+- Put a hints part in the game screen
+
+- Add properties to pokemon class
 
 ## Data structure
 Classes and methods definition.
