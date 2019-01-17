@@ -25,11 +25,33 @@ Files it contains:
 ## Data structure
 Classes and methods definition.
 
+### Classes
+- Pokemon
+- Player
+- Game
+
+### Methods
+#### Pokemon Methods
+- startGame()
+- buildDom()
+- printStartScreen() // deleteStartScreen()
+- printGameScreen() // deleteGameScreen()
+- printGameOverScreen() // deleteGameOverScreen()
+
+#### Player Methods
+- printName()
+- loseLives()
+- earnPoints()
+
+#### Pokemon Methods
+- printName()
+
+
 
 ## States y States Transitions
 Definition of the different states and their transition (transition functions)
 
-- splashScreen
+- Start Screen
 - gameScreen
 - gameoverScreen
 - winScreen
