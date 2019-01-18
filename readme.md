@@ -7,7 +7,7 @@ The main goal of the game is to guess which pokemon is being showed in the scree
 
 
 ## MVP (DOM - CANVAS)
-This game is made with DOM manipulation.
+This game is made with DOM manipulation.The game will show a blurry image with 4 different pokemon names where if the player chooses right he will sum points but if not he will lose lives to a max of 3.
 
 Files it contains:
 
@@ -16,6 +16,8 @@ Files it contains:
 - game.js
 - player.js
 - pokemon.js
+- callApi.js
+
 
 
 
@@ -42,16 +44,19 @@ Classes and methods definition.
 - Player
 - Game
 
+
 ### Methods
-#### Pokemon Methods
+#### Game Methods
 - startGame()
 - buildDom()
-- printStartScreen() // deleteStartScreen()
-- printGameScreen() // deleteGameScreen()
-- printGameOverScreen() // deleteGameOverScreen()
+- printStartScreen() 
+- printGameScreen()  
+- printGameOverScreen()
+- deleteScreen() 
 
 #### Player Methods
-- printName()
+![alt text](/octoapp.png)
+  - printName()
 - loseLives()
 - earnPoints()
 
