@@ -113,9 +113,10 @@ Pokemon.prototype.printName = function() {
 Definition of the different states and their transition (transition functions)
 
 - Start Screen: Screen with the start button, first screen the player will encounter.
-- gameScreen: In this screen the player is in the game, where depending on his answers he will lose lives or win points.
-- gameoverScreen: Screen that appears if the player loses all his lives 
-- winScreen: Screen that appears if the player reaches 10 points.
+- Game Screen: In this screen the player is in the game, where depending on his answers he will lose lives or win points.
+- Game Over Screen: Screen that appears if the player loses all his lives 
+
+- Win Screen: Screen that appears if the player reaches 10 points.
 
 
 ## Task
@@ -123,17 +124,63 @@ Tasks are more defined in the trello board
 
 Resume of the tasks:
 
-- Create git repo
-- Create the HTML for each of the game screens
-- Create classes for each of the 3  objects
+### Create git repo
+### Write readme
+### Create the HTML for each of the game screens
+  - Create Start Screen 
+  - Create Game Screen
 
-- Create properties and methods of each of the classes
-- Refactor code
-- Expand game with the backlog ideas
-- Refactor added functions from the backlog
-- Deploy on github websites
-- Commit and push always :)
-- Prepare presentation and slides
+- #### Create Game Over Screen 
+  - Win HTML
+  - Lose HTML
+  
+### Create JS Files
+- #### Main JS
+  - Define main.js methods
+- #### pokeApi JS
+  - Define variable where the promise data is stored
+  - Define methods on which data we want to retrieve from the api
+  - Define methods to return data to the game class
+  - Define methods to return data to the Pokemon class 
+### Classes
+  - #### Pokemon class
+    - Define variable name
+    - Define method to  return the name of the pokemon to the game class
+  - #### Player class
+    - Define variables:
+      - name
+      - points 
+      - lives
+      - highScore
+    - Define Methods to return:
+      - name -> printName();
+      - points -> earnPoints();
+      - lives -> loseLives();
+      - highScore -> printHighScores();
+  - #### Game class 
+    - Define constructor 
+      - Instanciate Player and Pokemon
+    - Define methods
+      - startGame() ;
+      - buildDom(); 
+      - printStartScreen(); 
+      - printGameScreen(); 
+      - printWinScreen(); 
+      - printGameOverScreen(); 
+      - deleteScreen(); 
+
+### Refactor Code
+  - #### Refactor Styles
+    - Start Screen
+    - Game Screen 
+    - Game Over Screen
+  - #### Refactor JS
+     
+  - #### Expand game with the backlog ideas
+
+- #### Deploy on github websites
+- #### Commit and push always :)
+- #### Prepare presentation and slides
 
 
 ## Links
