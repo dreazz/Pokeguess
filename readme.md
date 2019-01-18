@@ -24,6 +24,7 @@ Files it contains:
 
 
 ## Backlog
+- Evolve pokemon
 - Make the same navbar fixed for every screen, with title and rules, highscore icons
 
 - Put my twitter fixed in the bottom as a maker
