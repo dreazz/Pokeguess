@@ -1,3 +1,5 @@
+"use strict"
+
 
  var insults = ["ugly","horrible","weak"];
  var pokemon;

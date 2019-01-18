@@ -14,7 +14,17 @@ body {
 }
 h1{
   margin:0;
+  font-family: "Pokemon","Missigno",Arial, Helvetica, sans-serif;
 }
+@font-face {
+  font-family: "Pokemon";
+  src: url("fonts/Pokemon\ GB.ttf");
+  
+  }
+  @font-face{
+    font-family: "Missigno";
+    src:url("fonts/Pokemon\ Unown\ GB.ttf");
+  }
 
 /******Style Header*********/
 .header{

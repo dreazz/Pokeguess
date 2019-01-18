@@ -13,10 +13,12 @@ Files it contains:
 
 - index.html
 - style.css
+- main.js
 - game.js
 - player.js
 - pokemon.js
-- callApi.js
+- pokeApi.js
+- fonts
 
 
 
@@ -47,31 +49,73 @@ Classes and methods definition.
 
 ### Methods
 #### Game Methods
-- startGame()
-- buildDom()
-- printStartScreen() 
-- printGameScreen()  
-- printGameOverScreen()
-- deleteScreen() 
+```
+"use strict"
+function Game() {
+this.pokemon = new Pokemon; 
+this.player  = new Player; 
+
+}
+
+Game.prototype.startGame = function() {};
+Game.prototype.buildDom = function() {};
+Game.prototype.printStartScreen = function() {};
+Game.prototype.printGameScreen = function() {};
+Game.prototype.printWinScreen = function() {};
+Game.prototype.printGameOverScreen = function() {};
+Game.prototype.deleteScreen = function() {};
+
+```
+
 
 #### Player Methods
-![alt text](/octoapp.png)
-  - printName()
-- loseLives()
-- earnPoints()
+
+```
+"use strict"
+function Player(name) {
+  this.name = name;
+  this.points = 0;
+  this.lives = 3;
+  this.highScore = this.points;
+}
+
+Player.prototype.printName = function() {
+  return this.name;
+};
+Player.prototype.loseLives = function() {
+  return (this.lives -= 1);
+};
+Player.prototype.earnPoints = function() {
+  return (this.points += 1);
+};
+Player.prototype.printHighscore = function() {
+  return this.highScore;
+};
+
+```
 
 #### Pokemon Methods
-- printName()
+
+```
+"use strict"
+function Pokemon() {
+  this.name; //json call
+}
+
+Pokemon.prototype.printName = function() {
+  return this.name;
+};
+```
 
 
 
 ## States y States Transitions
 Definition of the different states and their transition (transition functions)
 
-- Start Screen
-- gameScreen
-- gameoverScreen
-- winScreen
+- Start Screen: Screen with the start button, first screen the player will encounter.
+- gameScreen: In this screen the player is in the game, where depending on his answers he will lose lives or win points.
+- gameoverScreen: Screen that appears if the player loses all his lives 
+- winScreen: Screen that appears if the player reaches 10 points.
 
 
 ## Task
