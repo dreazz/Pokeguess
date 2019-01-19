@@ -8,7 +8,9 @@ this.player  = new Player;
 
 Game.prototype.startGame = function() {};
 Game.prototype.buildDom = function() {};
-Game.prototype.nameCheck = function() {};
+Game.prototype.nameCheck = function(name) {
+  // check pokemon name with the users input
+};
 Game.prototype.printStartScreen = function() {};
 Game.prototype.printGameScreen = function() {};
 Game.prototype.printWinScreen = function() {};
