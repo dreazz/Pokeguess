@@ -37,6 +37,7 @@ h1{
   justify-content: space-around;
   align-items: center;
   background-color: #e74c3c;
+  color: white;
   
 }
 .nav ul{
@@ -54,12 +55,13 @@ h1{
   margin: 3rem auto 1rem;
   text-align: center;
 }
-.startButton{
+.btn{
   border-radius: 6px;
   background-color: #e74c3c;
   border: none;
   width: 50%;
   height: 40px;
+  color: white;
 
 }
 

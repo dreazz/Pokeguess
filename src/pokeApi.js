@@ -12,6 +12,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemon}/`)
   })
   .then(function(data) {
     pokemon = data.name;
+    /*print image and name of pokemon */
     h1Name.innerText = "you are an ugly " + data.name;
     var pokemonObject = {
       PokemonName: data.name,
