@@ -18,7 +18,7 @@ h1 {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
 }
 a {
-  color: rgb(255, 255, 255);
+  color: black;
 }
 label {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
@@ -32,25 +32,7 @@ label {
   src: url("fonts/Pokemon\ Unown\ GB.ttf");
 }
 
-/******Style Header*********/
-.header {
-  height: 5rem;
-}
-.nav {
-  height: 100%;
-  padding-top: 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #e74c3c;
-  color: white;
-}
-.nav ul {
-  width: 10%;
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-}
+
 
 /**********Main Style **********/
 .main {
@@ -64,6 +46,17 @@ label {
   flex-direction: column;
  
 }
+.main ul {
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+.main ul li{
+  margin:1rem;
+}
 form {
   width: 100%;
   align-items: center;
@@ -74,19 +67,20 @@ form {
 form h1{
   margin-bottom: 3rem;
 }
-#username {
+/* username = input */
+#usernameInput {
   width: 50%;
   margin: 1rem 0;
   min-height: 29px;
   border: none;
   box-shadow: 0px 3px 23px 0px rgba(0, 0, 0, 0.2);
 }
-#username:focus {
+#usernameInput:focus {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
-  outline: none !important;
+  outline: none 
 }
-#username::placeholder {
-  color: negro;
+#usernameInput::placeholder {
+
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
   text-align: center;
 }
@@ -115,8 +109,12 @@ form h1{
   color: black;
 }
 
-.dropdownShow {
+.rules:hover .dropdown-rules {
   display: block;
+  -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
 }
 .high-score:hover .dropdown-score {
   display: block;
