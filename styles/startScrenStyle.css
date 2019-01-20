@@ -17,9 +17,7 @@ h1 {
   margin: 0;
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
 }
-a {
-  color: black;
-}
+
 label {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
 }
@@ -34,8 +32,8 @@ label {
 
 
 
-/**********Main Style **********/
-.main {
+/**********Start Screen Main Style **********/
+.startScreenMain {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +44,7 @@ label {
   flex-direction: column;
  
 }
-.main ul {
+.startScreenMain ul {
   width: 10%;
   display: flex;
   justify-content: space-around;
@@ -54,7 +52,7 @@ label {
   justify-content: center;
   padding: 0;
 }
-.main ul li{
+.startScreenMain ul li{
   margin:1rem;
 }
 form {
