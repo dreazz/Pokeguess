@@ -61,6 +61,8 @@ label {
   min-height: 20rem;
   margin: 6rem auto;
   box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+ 
 }
 form {
   width: 100%;
