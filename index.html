@@ -64,15 +64,28 @@ SAY HEY! IF YOU CAN SEE MY FACE IN THAT UGLY ASCII -->
   <body>
     <header class="header">
       <navbar class="nav">
-        <h1>PokemonGuess</h1>
+        <h1>PokeGuess</h1>
         <ul>
-          <li><i class="fas fa-scroll"></i></li>
-          <li><i class="fas fa-trophy"></i></li>
+          <li class="rules">
+            <i class="fas fa-scroll"></i>
+            
+          </li>
+          <li class="high-score">
+            <i class="fas fa-trophy">
+              <div class="dropdown-score dropdown"><p>hi asdasd</p></div>
+            </i>
+          </li>
         </ul>
       </navbar>
     </header>
     <main class="main">
-      <button class="startButton btn">Start Game</button>
+        <div id="dropdownBox" class="dropdown-rules dropdown"><p>hi asdasd</p></div>
+      <form>
+        <label for="username">Username</label> 
+        <input type="text" id="username" placeholder="ash"/>
+        <button class="startButton btn">Start Game</button>
+      </form>
+      
     </main>
 
     <!-- game screen -->
