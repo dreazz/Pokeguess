@@ -6,12 +6,14 @@ window.addEventListener("load", function() {
   
   game = new Game()
    // call the api so i have the data for the game screen
-   
+ 
   printStartScreen();
+  
   apiCall();
 
   startButton = document.querySelector(".startButton");
   startButton.addEventListener("click", function() {
+    
     game.isStarted = true;
     game.printGameScreen();
   });

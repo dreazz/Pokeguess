@@ -11,10 +11,11 @@ function apiCall() {
     })
     .then(function(data) {
       game.setPokemon(data);
-      console.log("api ", game.isStarted)
-      if (game.isStarted) {
-        game.printGameScreen();
-      }
+      game.printNewPokemon();
+      console.log("api ", data.name)
+      // if (game.isStarted) {
+      //   game.printGameScreen();
+      // }
       return data;
     })
     .catch(function(error) {
