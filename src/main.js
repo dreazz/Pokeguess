@@ -2,15 +2,19 @@
 var startButton; 
 var game;
 window.addEventListener("load", function() {
- 
+  game = new Game();
+  apiCall(); // call the api so i have the data for the game screen
+    
   printStartScreen();
 
   startButton = document.querySelector(".startButton");
   startButton.addEventListener("click", function() {
-    game = new Game();
+    
+    
+    
+    
     game.printGameScreen();
-    apiCall();
-     
+    
 
   });
   function printStartScreen () {

@@ -122,7 +122,4 @@ form h1{
 .high-score:hover .dropdown-score {
   display: block;
 }
-img {
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
-}
+

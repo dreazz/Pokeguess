@@ -11,6 +11,7 @@ function apiCall() {
     })
     .then(function(data) {
       game.setPokemon(data);
+      return data;
     })
     .catch(function(error){
       console.log(error);

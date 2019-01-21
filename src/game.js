@@ -6,22 +6,27 @@ function Game() {
   this.player = new Player();
 }
 
+//unused
 Game.prototype.startGame = function() {};
 Game.prototype.buildDom = function() {};
-Game.prototype.nameCheck = function(name) {
-  // check pokemon name with the users input
-};
+// check pokemon name with the users input
+Game.prototype.nameCheck = function(name){};
+Game.prototype.printWinScreen = function() {};
+Game.prototype.printGameOverScreen = function() {};
 
 Game.prototype.setPokemon = function(data) {
   this.pokemon.setName(data.name);
   this.pokemon.setSprite(data.sprites.front_default);
+  
   console.log(this.pokemon);
 };
 
 Game.prototype.printGameScreen = function() {
-  main.innerHTML = `<h1> gameScreen</h1>
+  main.innerHTML = `<h1>${this.pokemon.name}</h1>
+  <img src ="${this.pokemon.sprite}">
  `;
   console.log(this.pokemon.printName());
 };
-Game.prototype.printWinScreen = function() {};
-Game.prototype.printGameOverScreen = function() {};
+
+
+
