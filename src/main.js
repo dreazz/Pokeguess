@@ -1,14 +1,18 @@
 "use strict";
 var startButton;
 var game;
-window.addEventListener("load", function() {
-  game = new Game();
-  apiCall(); // call the api so i have the data for the game screen
 
+window.addEventListener("load", function() {
+  
+  game = new Game()
+   // call the api so i have the data for the game screen
+   
   printStartScreen();
+  apiCall();
 
   startButton = document.querySelector(".startButton");
   startButton.addEventListener("click", function() {
+    game.isStarted = true;
     game.printGameScreen();
   });
   
@@ -40,4 +44,5 @@ window.addEventListener("load", function() {
   </section>
   `;
   }
+  
 });

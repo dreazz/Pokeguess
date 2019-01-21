@@ -1,19 +1,23 @@
 "use strict";
 
 function apiCall() {
-  var randomPokemon = Math.floor(Math.random() * 800);
+  var randomPokemon = Math.ceil(Math.random() * 600);
   var pokemonName;
   var pokemonImage;
 
-  fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemon}/`)
+  fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemon}/`) //
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
       game.setPokemon(data);
+      console.log("api ", game.isStarted)
+      if (game.isStarted) {
+        game.printGameScreen();
+      }
       return data;
     })
-    .catch(function(error){
+    .catch(function(error) {
       console.log(error);
     });
 }
