@@ -65,7 +65,7 @@ Game.prototype.printStartScreen = function() {};
 Game.prototype.printGameScreen = function() {};
 Game.prototype.printWinScreen = function() {};
 Game.prototype.printGameOverScreen = function() {};
-Game.prototype.deleteScreen = function() {};
+
 
 ```
 
