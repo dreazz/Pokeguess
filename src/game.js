@@ -15,16 +15,18 @@ Game.prototype.startGame = function() {};
 Game.prototype.buildDom = function() {};
 // check pokemon name with the users input
 Game.prototype.nameCheck = function() {
+  //refresh the api and calls printNewPokemon
   apiCall();
   
   if (this.pokemon.name == pokeForm.pokeName.value) {
+    //prints game screen
     this.printGameScreen(); 
   
     console.log("correct");
     
     
   } else {
-    
+    this.printGameScreen(); 
     console.log("wrong as fuck");
   
   }
