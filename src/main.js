@@ -1,23 +1,18 @@
 "use strict";
-var startButton; 
+var startButton;
 var game;
 window.addEventListener("load", function() {
   game = new Game();
   apiCall(); // call the api so i have the data for the game screen
-    
+
   printStartScreen();
 
   startButton = document.querySelector(".startButton");
   startButton.addEventListener("click", function() {
-    
-    
-    
-    
     game.printGameScreen();
-    
-
   });
-  function printStartScreen () {
+  
+  function printStartScreen() {
     main.innerHTML = ` 
     <section class="startScreenMain">
     <form>
@@ -44,6 +39,5 @@ window.addEventListener("load", function() {
   </ul>
   </section>
   `;
-  };
-
+  }
 });
