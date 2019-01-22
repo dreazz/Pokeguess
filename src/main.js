@@ -3,24 +3,21 @@ var startButton;
 var game;
 
 window.addEventListener("load", function() {
-  
-  game = new Game()
-   // call the api so i have the data for the game screen
- 
-  printStartScreen();
-  
+  game = new Game();
+  // call the api so i have the data for the game screen
   apiCall();
+  printStartScreen();
+
+ 
 
   startButton = document.querySelector(".startButton");
   startButton.addEventListener("click", function() {
-    
-    game.isStarted = true;
     game.printGameScreen();
   });
-  
+
   function printStartScreen() {
-    main.innerHTML = ` 
-    <section class="startScreenMain">
+   pokemonElements.innerHTML = ` 
+    
     <form>
     <h1>PokeGuess</h1>
   <label for="username">Username</label> 
@@ -43,8 +40,8 @@ window.addEventListener("load", function() {
       </i>
     </li>
   </ul>
+  </div>
   </section>
   `;
   }
-  
 });

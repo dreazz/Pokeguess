@@ -1,8 +1,10 @@
 "use strict";
 var main = document.querySelector(".main");
+var pokemonElements = document.querySelector("#box");
 var pokemonImage;
-var pokemonName = document.querySelector("#pokemonName")
+var pokemonName = document.querySelector("#pokemonName");
 var startButton;
+var blurred = document.querySelector(".blurred");
 function Game() {
   this.pokemon = new Pokemon();
   this.player = new Player();
@@ -16,31 +18,26 @@ Game.prototype.buildDom = function() {};
 // check pokemon name with the users input
 Game.prototype.nameCheck = function() {
   //refresh the api and calls printNewPokemon
+  
   apiCall();
   
+ 
   if (this.pokemon.name == pokeForm.pokeName.value) {
     //prints game screen
-    this.printGameScreen(); 
-  
+    this.printGameScreen();
+
     console.log("correct");
-    
-    
   } else {
-    this.printGameScreen(); 
+    this.printGameScreen();
     console.log("wrong as fuck");
-  
   }
- 
-  
 };
 
 Game.prototype.printNewPokemon = function() {
   pokemonImage = document.querySelector("#pokemonImage");
   pokemonName = document.querySelector("#pokemonName");
-  pokemonImage.innerHTML = ` <img src ="${this.pokemon.sprite}"> `
-  pokemonName.innerHTML = `<h1>Guess the pokemon " "${this.pokemon.name}</h1>`
-
-
+  pokemonImage.innerHTML = ` <img class="blurred" src ="${this.pokemon.sprite}"> `;
+  pokemonName.innerHTML = `<h1>Guess the pokemon " "${this.pokemon.name}</h1>`;
 };
 
 Game.prototype.printWinScreen = function() {};
@@ -53,20 +50,15 @@ Game.prototype.setPokemon = function(data) {
 
 Game.prototype.printGameScreen = function() {
   console.log(this.pokemon.name + " " + this.isStarted);
-  main.innerHTML = `
-  <section class="startScreenMain">
+  pokemonElements.innerHTML = `  
     <div id="pokemonName">
     <h1>Guess the pokemon " "${this.pokemon.name}</h1>
     </div>
     <div id="pokemonImage">
-    <img src ="${this.pokemon.sprite}"> 
+    <img class="blurred" src ="${this.pokemon.sprite}"> 
     </div> 
     <form name="myForm" id="pokeForm" onsubmit="return game.nameCheck()" >
     Name: <input type="text" name="pokeName">
-    <input type="button" value="Submit">
     </form> 
-   
-  </section>
-
  `;
 };
