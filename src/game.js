@@ -52,10 +52,12 @@ Game.prototype.printGameScreen = function() {
  `;
 };
 
+
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
-
+  
   if (this.player.lives <= 0) {
+    
     pokemonSection.innerHTML = `
   
   <h1 class="header-game-over"> you suck so bad that you hurted yourself</h1>
@@ -63,6 +65,8 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
+ 
+  
   } else {
     pokemonSection.innerHTML = `
   
@@ -71,5 +75,6 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
+ 
   }
 };
