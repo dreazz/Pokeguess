@@ -15,12 +15,12 @@ window.addEventListener("load", function() {
 
   //printStartScreen declaration
   function printStartScreen() {
-    pokemonElements.innerHTML = ` 
+    pokemonSection.innerHTML = ` 
     
     <form class="form">
       <h1>PokeGuess</h1>
       <label for="username">Username</label> 
-      <input type="text" class="userInput" placeholder="ash"/>
+      <input type="text" class="user-input" placeholder="ash" autofocus/>
       <button class="startButton btn">Start Game</button>
     </form>
   <ul>
