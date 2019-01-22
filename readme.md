@@ -194,8 +194,8 @@ Resume of the tasks:
 
 ### Git
 URls for the project repo and deploy
-[Link Repo](http://github.com)
-[Link Deploy](http://github.com)
+[Link Repo](http://github.com/dreazz/Pokeguess)
+[Link Deploy](http://dreazz.github.io/Pokeguess)
 
 
 ### Slides
