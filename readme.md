@@ -51,21 +51,35 @@ Classes and methods definition.
 ### Methods
 #### Game Methods
 ```
-"use strict"
-function Game() {
-this.pokemon = new Pokemon; 
-this.player  = new Player; 
+"use strict";
+var main = document.querySelector(".main");
+var blurred = document.querySelector(".blurred");
+var pokemonElements = document.querySelector("#box");
 
+function Game() {
+  this.pokemon = new Pokemon();
+  this.player = new Player();
+  this.isStarted = false;//detects if game is started 
 }
 
-Game.prototype.startGame = function() {};
-Game.prototype.buildDom = function() {};
-Game.prototype.nameCheck = function(){};
-Game.prototype.printStartScreen = function() {};
-Game.prototype.printGameScreen = function() {};
-Game.prototype.printWinScreen = function() {};
-Game.prototype.printGameOverScreen = function() {};
+//checks the player imput with the name of the pokemon
+Game.prototype.nameCheck = function() {
+  //refresh the api and calls printNewPokemon
+  apiCall();
 
+  if (this.pokemon.name == pokeForm.pokeName.value) {
+    this.printGameScreen();
+    console.log("correct");
+  } else {
+    this.printGameScreen();
+    console.log("wrong as fuck");
+  }
+};
+
+//Sets pokemon data from the api
+Game.prototype.setPokemon = function(data) {};
+
+Game.prototype.printGameScreen = function() {};
 
 ```
 
@@ -99,14 +113,20 @@ Player.prototype.printHighscore = function() {
 #### Pokemon Methods
 
 ```
-"use strict"
 function Pokemon() {
-  this.name; //json call
+  this.name;
+  this.sprite;
 }
 
-Pokemon.prototype.printName = function() {
-  return this.name;
+//Gets pokemon name from the api
+Pokemon.prototype.setName = function(name) {
+  this.name = name;
 };
+
+Pokemon.prototype.setSprite = function(sprite) {
+  this.sprite = sprite;
+};
+
 ```
 
 
