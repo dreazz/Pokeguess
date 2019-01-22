@@ -25,14 +25,6 @@ Game.prototype.nameCheck = function() {
   }
 };
 
-Game.prototype.printNewPokemon = function() {
-  pokemonImage = document.querySelector("#pokemonImage");
-  pokemonName = document.querySelector("#pokemonName");
-  pokemonImage.innerHTML = ` <img class="blurred" src ="${
-    this.pokemon.sprite
-  }"> `;
-  pokemonName.innerHTML = `<h1>Guess the pokemon ${this.pokemon.name}</h1>`;
-};
 
 Game.prototype.setPokemon = function(data) {
   this.pokemon.setName(data.name);
