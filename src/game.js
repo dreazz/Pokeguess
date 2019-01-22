@@ -8,9 +8,7 @@ function Game() {
   this.player = new Player();
   this.isStarted = false; //detects if game is started
 }
-Game.prototype.startPlaying = function() {
-  
-};
+
 //checks the player imput with the name of the pokemon
 Game.prototype.nameCheck = function() {
   //refresh the api and calls printNewPokemon
@@ -59,5 +57,7 @@ Game.prototype.printGameOverScreen = function() {
   <h1 class="header-game-over"> you suck so bad that you hurted yourself</h1>
     <img class="img-game-over" src="https://pbs.twimg.com/profile_images/498674423357251585/cD4IfiPQ_400x400.jpeg">
     <button class="startButton btn">Play Again</button>
+    <button class="startButton btn">Men</button>
   `;
+  
 };

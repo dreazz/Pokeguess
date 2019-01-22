@@ -12,6 +12,10 @@ html {
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
 }
 h1 {
   margin: 0;
@@ -39,7 +43,22 @@ label {
 }
 
 /**********Main Style **********/
-
+.img-bydreazz {
+  width: 25%;
+  border-radius: 50%;
+}
+.link-bydreazz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  background: #e74c3c;
+  color: white;
+  border-radius: 0 1px 10px 10px;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
+}
 .screen-main {
   display: flex;
   align-items: center;
@@ -71,7 +90,9 @@ label {
   flex-direction: column;
 }
 .form h1 {
+  color: #ffde00;
   margin-bottom: 3rem;
+  text-shadow: 3px 0 #3b4cca, 0 4px #3b4cca, -4px 0 #3b4cca, 0 -4px #3b4cca;
 }
 /* username = input */
 .user-input {
@@ -117,28 +138,26 @@ label {
 
 .rules:hover .dropdown-rules {
   display: block;
-
 }
 .high-score:hover .dropdown-score {
   display: block;
 }
 
-
 /******** GAME SCREEN **************/
-.blurred{
+.blurred {
   -webkit-filter: blur(5px);
   filter: blur(5px);
-  width:13rem;
+  width: 13rem;
 }
 
 /******** GAME OVER **************/
-.missigno{
-  font-family: "missigno"
+.missigno {
+  font-family: "missigno";
 }
 
-.header-game-over{
-  font-size:15px;
+.header-game-over {
+  font-size: 15px;
 }
-.img-game-over{
-  width:30%;
+.img-game-over {
+  width: 30%;
 }
