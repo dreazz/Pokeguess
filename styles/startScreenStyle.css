@@ -78,6 +78,7 @@ form h1{
   min-height: 29px;
   border: none;
   box-shadow: 0px 3px 23px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 #usernameInput:focus {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
