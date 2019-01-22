@@ -38,7 +38,7 @@ Game.prototype.printGameScreen = function() {
     <div id="pokemonImage">
     <img class="blurred" src ="${this.pokemon.sprite}"> 
     </div> 
-    <form name="myForm" id="pokeForm" onsubmit="return game.nameCheck()" >
+    <form name="myForm" id="pokeForm" class="form" onsubmit="return game.nameCheck()" >
      <input type="text" class="userInput" name="pokeName" placeholder="pikcahu">
     </form> 
     </div>

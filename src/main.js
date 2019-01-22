@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
   function printStartScreen() {
     pokemonElements.innerHTML = ` 
     
-    <form>
+    <form class="form">
       <h1>PokeGuess</h1>
       <label for="username">Username</label> 
       <input type="text" class="userInput" placeholder="ash"/>

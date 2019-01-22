@@ -29,8 +29,6 @@ label {
   font-family: "Missigno";
   src: url("fonts/Pokemon\ Unown\ GB.ttf");
 }
-
-/**********Start Screen Main Style **********/
 @keyframes fadein {
   from {
     opacity: 0;
@@ -39,6 +37,9 @@ label {
     opacity: 1;
   }
 }
+
+/**********Start Screen Main Style **********/
+
 .startScreenMain {
   display: flex;
   align-items: center;
@@ -62,14 +63,14 @@ label {
   margin: 1rem;
   color: #e74c3c;
 }
-form {
+.form {
   width: 100%;
   align-items: center;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
-form h1 {
+.form h1 {
   margin-bottom: 3rem;
 }
 /* username = input */
@@ -116,10 +117,7 @@ form h1 {
 
 .rules:hover .dropdown-rules {
   display: block;
-  -webkit-transition: width 1s ease-in-out;
-  -moz-transition: width 1s ease-in-out;
-  -o-transition: width 1s ease-in-out;
-  transition: width 1s ease-in-out;
+
 }
 .high-score:hover .dropdown-score {
   display: block;
@@ -131,3 +129,4 @@ form h1 {
   -webkit-filter: blur(5px);
   filter: blur(5px);
 }
+
