@@ -1,7 +1,7 @@
 "use strict";
 
 function apiCall() {
-  var randomPokemon = Math.ceil(Math.random() * 600);
+  var randomPokemon = Math.ceil(Math.random() * 151);
   var pokemonName;
   var pokemonImage;
 
@@ -10,12 +10,12 @@ function apiCall() {
       return response.json();
     })
     .then(function(data) {
+      //sets name and image of the pokemon
       game.setPokemon(data);
+      //prints the new pokemon
       game.printNewPokemon();
       console.log("api ", data.name)
-      // if (game.isStarted) {
-      //   game.printGameScreen();
-      // }
+      
       return data;
     })
     .catch(function(error) {
