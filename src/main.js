@@ -23,7 +23,7 @@ window.addEventListener("load", function() {
       <label for="username">Username</label> 
       <input type="text" id="usernameInput" placeholder="ash"/>
       <button class="startButton btn">Start Game</button>
-  </form>
+    </form>
   <ul>
     <li class="rules">
       <i class="fas fa-scroll"></i>

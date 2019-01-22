@@ -12,6 +12,7 @@ function Game() {
   this.isStarted = false;
 }
 
+//checks the player imput with the name of the pokemon
 Game.prototype.nameCheck = function() {
   //refresh the api and calls printNewPokemon
   apiCall();
@@ -25,7 +26,7 @@ Game.prototype.nameCheck = function() {
   }
 };
 
-
+//Sets pokemon data from the api
 Game.prototype.setPokemon = function(data) {
   this.pokemon.setName(data.name);
   this.pokemon.setSprite(data.sprites.front_default);
@@ -43,5 +44,6 @@ Game.prototype.printGameScreen = function() {
     <form name="myForm" id="pokeForm" onsubmit="return game.nameCheck()" >
     Name: <input type="text" name="pokeName">
     </form> 
+    </div>
  `;
 };
