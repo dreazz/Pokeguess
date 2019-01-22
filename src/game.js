@@ -1,15 +1,12 @@
 "use strict";
 var main = document.querySelector(".main");
-var pokemonElements = document.querySelector("#box");
-var pokemonImage;
-var pokemonName = document.querySelector("#pokemonName");
-var startButton;
 var blurred = document.querySelector(".blurred");
+var pokemonElements = document.querySelector("#box");
 
 function Game() {
   this.pokemon = new Pokemon();
   this.player = new Player();
-  this.isStarted = false;
+  this.isStarted = false;//detects if game is started 
 }
 
 //checks the player imput with the name of the pokemon

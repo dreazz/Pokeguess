@@ -1,12 +1,10 @@
 "use strict";
 var game;
+var startButton;
 
 window.addEventListener("load", function() {
-  var startButton;
   game = new Game();
-
-  // call the api so i have the data for the game screen
-  apiCall();
+  apiCall(); // call the api so i have the data for the game screen
   printStartScreen();
 
   startButton = document.querySelector(".startButton");
@@ -15,6 +13,7 @@ window.addEventListener("load", function() {
     game.printGameScreen();
   });
 
+  //printStartScreen declaration
   function printStartScreen() {
     pokemonElements.innerHTML = ` 
     
