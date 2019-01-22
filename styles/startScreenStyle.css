@@ -30,12 +30,14 @@ label {
   src: url("fonts/Pokemon\ Unown\ GB.ttf");
 }
 
-
-
 /**********Start Screen Main Style **********/
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .startScreenMain {
   display: flex;
@@ -46,8 +48,7 @@ label {
   margin: 6rem auto;
   box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.4);
   flex-direction: column;
-  animation:fadein 3s;
- 
+  animation: fadein 3s;
 }
 .startScreenMain ul {
   width: 10%;
@@ -57,9 +58,9 @@ label {
   justify-content: center;
   padding: 0;
 }
-.startScreenMain ul li{
-  margin:1rem;
-  color:#e74c3c;
+.startScreenMain ul li {
+  margin: 1rem;
+  color: #e74c3c;
 }
 form {
   width: 100%;
@@ -68,24 +69,23 @@ form {
   display: flex;
   flex-direction: column;
 }
-form h1{
+form h1 {
   margin-bottom: 3rem;
 }
 /* username = input */
-#usernameInput {
+.userInput {
   width: 50%;
   margin: 1rem 0;
   min-height: 29px;
   border: none;
   box-shadow: 0px 3px 23px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
-}
-#usernameInput:focus {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
-  outline: none 
 }
-#usernameInput::placeholder {
-
+.userInput:focus {
+  outline: none;
+}
+.userInput::placeholder {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
   text-align: center;
 }
@@ -117,11 +117,10 @@ form h1{
 .rules:hover .dropdown-rules {
   display: block;
   -webkit-transition: width 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out;
-    -o-transition: width 1s ease-in-out;
-    transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 .high-score:hover .dropdown-score {
   display: block;
 }
-

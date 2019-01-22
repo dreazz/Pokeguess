@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
     <form>
       <h1>PokeGuess</h1>
       <label for="username">Username</label> 
-      <input type="text" id="usernameInput" placeholder="ash"/>
+      <input type="text" class="userInput" placeholder="ash"/>
       <button class="startButton btn">Start Game</button>
     </form>
   <ul>
