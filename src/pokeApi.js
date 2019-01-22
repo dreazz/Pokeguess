@@ -11,7 +11,9 @@ function apiCall() {
       //sets name and image of the pokemon
       game.setPokemon(data);
       //prints the new pokemon
-      game.printNewPokemon();
+      if(game.isStarted){
+      game.printGameScreen();
+      }
       console.log("api ", data.name)
       
       return data;

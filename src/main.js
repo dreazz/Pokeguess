@@ -1,28 +1,28 @@
 "use strict";
-var startButton;
 var game;
 
 window.addEventListener("load", function() {
+  var startButton;
   game = new Game();
+
   // call the api so i have the data for the game screen
   apiCall();
   printStartScreen();
 
- 
-
   startButton = document.querySelector(".startButton");
   startButton.addEventListener("click", function() {
+    game.isStarted = true;
     game.printGameScreen();
   });
 
   function printStartScreen() {
-   pokemonElements.innerHTML = ` 
+    pokemonElements.innerHTML = ` 
     
     <form>
-    <h1>PokeGuess</h1>
-  <label for="username">Username</label> 
-  <input type="text" id="usernameInput" placeholder="ash"/>
-  <button class="startButton btn">Start Game</button>
+      <h1>PokeGuess</h1>
+      <label for="username">Username</label> 
+      <input type="text" id="usernameInput" placeholder="ash"/>
+      <button class="startButton btn">Start Game</button>
   </form>
   <ul>
     <li class="rules">
@@ -40,8 +40,7 @@ window.addEventListener("load", function() {
       </i>
     </li>
   </ul>
-  </div>
-  </section>
+  
   `;
   }
 });
