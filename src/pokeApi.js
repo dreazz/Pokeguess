@@ -2,8 +2,6 @@
 
 function apiCall() {
   var randomPokemon = Math.ceil(Math.random() * 151);
-  var pokemonName;
-  var pokemonImage;
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemon}/`) //
     .then(function(response) {
