@@ -135,6 +135,7 @@ label {
   margin-top: 1rem;
   color: black;
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
+  padding: 2rem;
 }
 
 .rules:hover .dropdown-rules {

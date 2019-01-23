@@ -3,6 +3,7 @@
 function Pokemon() {
   this.name;
   this.sprite;
+  this.hallOfFame = [];
 }
 
 //Gets pokemon name from the api

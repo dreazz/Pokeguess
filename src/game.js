@@ -12,8 +12,9 @@ function Game() {
 //checks the player imput with the name of the pokemon
 Game.prototype.nameCheck = function() {
   //refresh the api and calls printNewPokemon
-  if ((this.player.lives > 2) && (this.player.points <= 2)) {
+  if (this.player.lives > 0 && this.player.points <= 2) {
     apiCall();
+    console.log(this.player.lives);
 
     if (this.pokemon.name == pokeForm.pokeName.value) {
       this.player.points += 1;
@@ -52,12 +53,10 @@ Game.prototype.printGameScreen = function() {
  `;
 };
 
-
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
-  
+
   if (this.player.lives <= 0) {
-    
     pokemonSection.innerHTML = `
   
   <h1 class="header-game-over"> you suck so bad that you hurted yourself</h1>
@@ -65,16 +64,15 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
- 
-  
   } else {
-    pokemonSection.innerHTML = `
+    console.log(this.pokemon.hallOfFame);
   
+    pokemonSection.innerHTML = `
+
   <h1 class="header-game-over"> hall of fame</h1>
-    
+
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
- 
   }
 };
