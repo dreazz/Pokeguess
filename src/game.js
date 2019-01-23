@@ -7,31 +7,33 @@ function Game() {
   this.pokemon = new Pokemon();
   this.player = new Player();
   this.isStarted = false; //detects if game is started
+  this.maxPoints = 6;
 }
-
+Game.prototype.hall = function() {
+  return this.pokemon.hallOfFame;
+};
 //checks the player imput with the name of the pokemon
 Game.prototype.nameCheck = function() {
-  //refresh the api and calls printNewPokemon
-  console.log(this.player.lives);
-  if (this.player.lives >= 1 && this.player.points < 5) {
-    if (this.pokemon.name === pokeForm.pokeName.value) {
-      this.player.points += 1;
-      apiCall();      
-      this.printGameScreen();
-      console.log("correct " + this.player.points);
+  if (myForm.pokeName.value === this.pokemon.name) {
+    if (this.player.points === this.maxPoints) {
+      this.printGameOverScreen();
     } else {
-      if (this.player.lives === 1) {
-        this.player.lives -= 1;
-        this.printGameOverScreen();
-      } else {
-        this.player.lives -= 1;
-        console.log("wrong as fuck " + this.player.lives);
-        apiCall();          
-        this.printGameScreen();
-      }
+      this.pokemon.hallOfFame.push({
+        name: this.pokemon.name,
+        sprite: this.pokemon.sprite
+      });
+      this.player.points += 1;
+      apiCall();
+      this.printGameScreen();
     }
   } else {
-    this.printGameOverScreen();
+    if (this.player.lives === 0) {
+      this.printGameOverScreen();
+    } else {
+      this.player.lives -= 1;
+      apiCall();
+      this.printGameScreen();
+    }
   }
 };
 
@@ -61,13 +63,28 @@ Game.prototype.printGameScreen = function() {
 
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
-  if(this.player.points === 5 && this.player.lives > 0) {
+  if (this.player.points === this.maxPoints && this.player.lives > 0) {
     console.log(this.pokemon.hallOfFame);
 
     pokemonSection.innerHTML = `
 
-  <h1 class="header-game-over"> hall of fame</h1>
-
+    <h1 class="header-game-over"> hall of fame</h1>
+    <div class="hall-of-fame">
+      <h1>${this.pokemon.hallOfFame[0].name}</h1>
+      <img src="${this.pokemon.hallOfFame[0].sprite}" >
+      <h1>${this.pokemon.hallOfFame[1].name}</h1>
+      <img src="${this.pokemon.hallOfFame[1].sprite}" >
+      <h1>${this.pokemon.hallOfFame[2].name}</h1>
+      <img src="${this.pokemon.hallOfFame[2].sprite}" >
+    </div>
+    <div class="hall-of-fame">
+      <h1>${this.pokemon.hallOfFame[3].name}</h1>
+      <img src="${this.pokemon.hallOfFame[3].sprite}" >
+      <h1>${this.pokemon.hallOfFame[4].name}</h1>
+      <img src="${this.pokemon.hallOfFame[4].sprite}" >
+      <h1>${this.pokemon.hallOfFame[5].name}</h1>
+      <img src="${this.pokemon.hallOfFame[5].sprite}" >
+    </div>
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
@@ -79,5 +96,5 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
-  } 
+  }
 };

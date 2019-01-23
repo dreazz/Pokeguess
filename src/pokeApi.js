@@ -10,7 +10,6 @@ function apiCall() {
     })
     .then(function(data) {
       game.setPokemon(data); //sets name and image of the pokemon
-      pokemon.hallOfFame.push({name:data.name, sprite:data.sprites.front_default})
       if (game.isStarted) {
         game.printGameScreen(); //prints the new pokemon
       }
