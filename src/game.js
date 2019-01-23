@@ -2,6 +2,7 @@
 var main = document.querySelector(".main");
 var blurred = document.querySelector(".blurred");
 var pokemonSection = document.querySelector(".screen-main");
+var scoreList = document.getElementsByClassName("dropdown-score");
 
 function Game() {
   this.pokemon = new Pokemon();
@@ -36,7 +37,12 @@ Game.prototype.nameCheck = function() {
     }
   }
 };
-
+Game.prototype.getHighScore = function(){
+  
+  for(var i in localStorage){
+    scoreList.innerHTML = `<li class="score"> <h3>${localStorage.key(i)}</h3><h3>${localStorage[localStorage.key(i)]}</h3></li> `;
+  }
+}
 //Sets pokemon data from the api
 Game.prototype.setPokemon = function(data) {
   this.pokemon.setName(data.name);
@@ -89,6 +95,7 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
+   localStorage.setItem(this.player.name, this.player.points);
   } else {
     pokemonSection.innerHTML = `
   
@@ -97,5 +104,6 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn">Play Again</button>
     <button class="startButton btn">Menu</button>
   `;
+  localStorage.setItem(this.player.name, this.player.points);
   }
 };

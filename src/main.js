@@ -1,15 +1,20 @@
 "use strict";
 var game;
 var startButton;
+var playerName = document.querySelector(".player-name");
 
 window.addEventListener("load", function() {
   game = new Game();
   apiCall(); // call the api so i have the data for the game screen
+  game.getHighScore();
   printStartScreen();
 
   startButton = document.querySelector(".startButton");
+  playerName = document.querySelector(".player-name");
   startButton.addEventListener("click", function() {
+    game.player.name = playerName.value;
     game.isStarted = true;
+
     game.printGameScreen();
   });
 
@@ -20,7 +25,7 @@ window.addEventListener("load", function() {
     <form class="form">
       <h1>PokeGuess</h1>
       <label for="username">Username</label> 
-      <input type="text" class="user-input" placeholder="ash" autofocus/>
+      <input type="text" class="user-input player-name" placeholder="ash" autofocus/>
       <button class="startButton btn">Start Game</button>
     </form>
   <ul>
@@ -35,7 +40,12 @@ window.addEventListener("load", function() {
     </li>
     <li class="high-score">
         <i class="fas fa-trophy"></i>
-        <div class="dropdown-score dropdown"><h3>Highscore</h3></div>
+        <div class="dropdown-score dropdown">
+        <h3>Highscore</h3>
+        <ul class="high-score-list">
+        
+        </ul>
+        </div>
       </i>
     </li>
   </ul>
