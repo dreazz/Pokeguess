@@ -149,9 +149,16 @@ label {
 .blurred {
   -webkit-filter: blur(5px);
   filter: blur(5px);
-  width: 13rem;
+  width: 20rem;
 }
-
+.player-status{
+  display:flex;
+  align-content: space-between;
+  margin-top:10px;
+}
+.player-status h3{
+  margin:0 1rem
+}
 /******** GAME OVER **************/
 .missigno {
   font-family: "missigno";
@@ -165,7 +172,9 @@ label {
 }
 
 
-
+.hall-of-fame{
+  display:flex
+}
 
 
 /**confeti***/

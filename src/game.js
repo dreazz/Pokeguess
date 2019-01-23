@@ -52,10 +52,12 @@ Game.prototype.setPokemon = function(data) {
 Game.prototype.printGameScreen = function() {
   console.log(this.pokemon.name + " " + this.isStarted);
   pokemonSection.innerHTML = `  
-  <h3> ${this.player.points}</h3>
-  <h3> ${this.player.lives}</h3>
+  <div class="player-status">
+  <h3> Points: ${this.player.points}</h3>
+  <h3> lives: ${this.player.lives}</h3>
+  </div>
     <div id="pokemonName">
-    <h1>Guess the pokemon ${this.pokemon.name}</h1>
+    <h1>${this.pokemon.name}</h1>
     </div>
     <div id="pokemonImage">
     <img class="blurred" src ="${this.pokemon.sprite}"> 
