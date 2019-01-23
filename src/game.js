@@ -15,18 +15,18 @@ Game.prototype.nameCheck = function() {
   console.log(this.player.lives);
   if (this.player.lives >= 1 && this.player.points < 5) {
     if (this.pokemon.name === pokeForm.pokeName.value) {
-      apiCall();
       this.player.points += 1;
+      apiCall();      
       this.printGameScreen();
       console.log("correct " + this.player.points);
     } else {
       if (this.player.lives === 1) {
-        this.printGameOverScreen();
         this.player.lives -= 1;
+        this.printGameOverScreen();
       } else {
-        apiCall();
         this.player.lives -= 1;
         console.log("wrong as fuck " + this.player.lives);
+        apiCall();          
         this.printGameScreen();
       }
     }
@@ -45,6 +45,7 @@ Game.prototype.printGameScreen = function() {
   console.log(this.pokemon.name + " " + this.isStarted);
   pokemonSection.innerHTML = `  
   <h3> ${this.player.points}</h3>
+  <h3> ${this.player.lives}</h3>
     <div id="pokemonName">
     <h1>Guess the pokemon ${this.pokemon.name}</h1>
     </div>
@@ -60,7 +61,7 @@ Game.prototype.printGameScreen = function() {
 
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
-  if(this.player.points === 6) {
+  if(this.player.points === 5 && this.player.lives > 0) {
     console.log(this.pokemon.hallOfFame);
 
     pokemonSection.innerHTML = `
