@@ -74,6 +74,10 @@ Game.prototype.printGameOverScreen = function() {
   if (this.player.points === this.maxPoints && this.player.lives > 0) {
     setTimeout(confetti,800);
     
+    startButton.addEventListener("click", function() {
+  
+      game.printGameScreen();
+    });
 
     pokemonSection.innerHTML = `
 
@@ -94,16 +98,20 @@ Game.prototype.printGameOverScreen = function() {
       <h1>${this.pokemon.hallOfFame[5].name}</h1>
       <img src="${this.pokemon.hallOfFame[5].sprite}" >
     </div>
-    <button class="startButton btn">Play Again</button>
+    <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn">Menu</button>
   `;
    localStorage.setItem(this.player.name, this.player.points);
   } else {
+    startButton.addEventListener("click", function() {
+  
+      game.printGameScreen();
+    });
     pokemonSection.innerHTML = `
   
   <h1 class="header-game-over"> you suck so bad that you hurted yourself</h1>
     <img class="img-game-over" src="https://pbs.twimg.com/profile_images/498674423357251585/cD4IfiPQ_400x400.jpeg">
-    <button class="startButton btn">Play Again</button>
+    <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn">Menu</button>
   `;
   localStorage.setItem(this.player.name, this.player.points);
