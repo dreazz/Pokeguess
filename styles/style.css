@@ -169,14 +169,14 @@ label {
 
 
 /**confeti***/
-body {
+/* body {
   margin: 0;
   overflow: hidden;
-}
+} */
 
 .wrapper {
   position: relative;
-  min-height: 100vh;
+  
 }
 
 [class|="confetti"] {

@@ -64,7 +64,8 @@ Game.prototype.printGameScreen = function() {
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
   if (this.player.points === this.maxPoints && this.player.lives > 0) {
-    console.log(this.pokemon.hallOfFame);
+    setTimeout(confetti,800);
+    
 
     pokemonSection.innerHTML = `
 
