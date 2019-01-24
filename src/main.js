@@ -3,12 +3,11 @@ var game;
 var startButton;
 var playerName = document.querySelector(".player-name");
 
- window.addEventListener("load", function() {
-   game = new Game();
+window.addEventListener("load", function() {
+  game = new Game();
   apiCall(); // call the api so i have the data for the game screen
-  game.getHighScore();
   game.printStartScreen();
-
+  game.getHighScore()
   startButton = document.querySelector(".startButton");
   playerName = document.querySelector(".player-name");
   startButton.addEventListener("click", function() {
@@ -17,6 +16,4 @@ var playerName = document.querySelector(".player-name");
 
     game.printGameScreen();
   });
-
-  
 });

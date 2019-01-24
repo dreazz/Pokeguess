@@ -4,8 +4,9 @@ var main = document.querySelector(".main");
 var blurred = document.querySelector(".blurred");
 var startButton = document.querySelector("#menu-button");
 var pokemonSection = document.querySelector(".screen-main");
-var scoreList = document.getElementsByClassName("dropdown-score");
-
+var scoreList = document.getElementsByClassName("high-score-list");
+var myObjSerialized;
+var myObjDeserialized;
 function Game() {
   this.pokemon = new Pokemon();
   this.player = new Player();
@@ -40,10 +41,13 @@ Game.prototype.nameCheck = function() {
   }
 };
 Game.prototype.getHighScore = function() {
-  for (var i in localStorage) {
-    scoreList.innerHTML = `<li class="score"> <h3>${localStorage.key(
-      i
-    )}</h3><h3>${localStorage[localStorage.key(i)]}</h3></li> `;
+  myObjDeserialized = JSON.parse(localStorage.player)
+  for (var i in myObjDeserialized) {
+    scoreList.innerHTML = `
+    <li class="score">
+     <h3>${i} </h3>
+    <h3>${myObjDeserialized[(i)]}</h3>
+    </li> `;
   }
 };
 //Sets pokemon data from the api
@@ -140,7 +144,11 @@ Game.prototype.printGameOverScreen = function() {
   `;
 
     pokemonSection.classList.add("full-width");
-    window.localStorage.setItem(this.player.name, this.player.points);
+    myObjSerialized = JSON.stringify({
+      name: this.player.name,
+      points: this.player.points
+    });
+    window.localStorage.setItem("player", myObj);
   } else {
     pokemonSection.innerHTML = `
   
@@ -149,7 +157,10 @@ Game.prototype.printGameOverScreen = function() {
     <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
-    
-    window.localStorage.setItem(this.player.name, this.player.points);
+  myObjSerialized = JSON.stringify({
+      name: this.player.name,
+      points: this.player.points
+    });
+    window.localStorage.setItem("player", myObj);
   }
 };
