@@ -97,8 +97,8 @@ Game.prototype.getFocus = function() {
 Game.prototype.printGameScreen = function() {
   pokemonSection.innerHTML = `  
   <div class="player-status">
-  <h3> <i class="far fa-heart">${this.player.lives}</i> </h3>
-  <h3> <i class="fas fa-trophy">${this.player.points}</i> </h3>
+  <div class="game-icon"> <i class="far fa-heart"><span>${this.player.lives}</span></i> </div>
+  <div class="game-icon"> <i class="fas fa-trophy"><span>${this.player.points}</span></i> </div>
   
   </div>
     <div id="pokemonName">

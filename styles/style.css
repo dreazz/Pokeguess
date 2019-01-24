@@ -181,6 +181,15 @@ label {
 .full-width {
   width: 80%;
 }
+.game-icon {
+  color:#e74c3c;
+  margin:1rem;
+}
+.game-icon span{
+  font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
+  margin:1rem;
+  color:black;
+}
 /******** GAME OVER **************/
 .missigno {
   font-family: "missigno";
