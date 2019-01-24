@@ -17,7 +17,12 @@ body {
   flex-direction: column;
   align-content: center;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
 }
@@ -119,6 +124,7 @@ label {
   height: 40px;
   color: white;
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem
 }
 .btn:hover {
   transform: scale(1.1) !important;
@@ -151,25 +157,25 @@ label {
   filter: blur(5px);
   width: 50%;
 }
-.player-status{
-  display:flex;
+.player-status {
+  display: flex;
   align-content: space-between;
-  margin-top:10px;
+  margin-top: 10px;
   margin: 1rem auto;
 }
-.player-status h3{
-  margin:0 1rem
+.player-status h3 {
+  margin: 0 1rem;
 }
-#pokemonImage{
+#pokemonImage {
   height: 19rem;
-  min-width:100%;
+  min-width: 100%;
   text-align: center;
 }
-.game-input{
-  margin:2rem auto;
+.game-input {
+  margin: 2rem auto;
 }
-.full-width{
-  width:80%;
+.full-width {
+  width: 80%;
 }
 /******** GAME OVER **************/
 .missigno {
@@ -177,17 +183,24 @@ label {
 }
 
 .header-game-over {
-  font-size: 15px;
+  color: #ffde00;
+  text-shadow: 3px 0 #3b4cca, 0 4px #3b4cca, -4px 0 #3b4cca, 0 -4px #3b4cca;
+}
+.win-title{
+  margin-bottom: 3rem;
+}
+.lose-title{
+  width: 74%;
+  margin-top:2rem;
+  line-height: 2rem;
 }
 .img-game-over {
   width: 30%;
 }
 
-
-.hall-of-fame{
-  display:flex
+.hall-of-fame {
+  display: flex;
 }
-
 
 /**confeti***/
 /* body {
@@ -197,7 +210,6 @@ label {
 
 .wrapper {
   position: relative;
-  
 }
 
 [class|="confetti"] {
@@ -205,13 +217,13 @@ label {
 }
 
 .red {
-  background-color: #E94A3F;
+  background-color: #e94a3f;
 }
 
 .yellow {
-  background-color: #FAA040;
+  background-color: #faa040;
 }
 
 .blue {
-  background-color: #5FC9F5;
+  background-color: #5fc9f5;
 }

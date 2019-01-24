@@ -117,7 +117,7 @@ Game.prototype.printGameOverScreen = function() {
 
     pokemonSection.innerHTML = `
 
-    <h1 class="header-game-over"> hall of fame</h1>
+    <h1 class="header-game-over win-title"> Hall of fame</h1>
     <div class="hall-of-fame">
       <h1>${this.pokemon.hallOfFame[0].name}</h1>
       <img src="${this.pokemon.hallOfFame[0].sprite}" >
@@ -143,7 +143,7 @@ Game.prototype.printGameOverScreen = function() {
   } else {
     pokemonSection.innerHTML = `
   
-  <h1 class="header-game-over"> you suck so bad that you hurt yourself</h1>
+    <h1 class="header-game-over lose-title"> You suck so bad that you hurt yourself</h1>
     <img class="img-game-over" src="https://pbs.twimg.com/profile_images/498674423357251585/cD4IfiPQ_400x400.jpeg">
     <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
