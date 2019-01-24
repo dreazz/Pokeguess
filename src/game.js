@@ -92,8 +92,8 @@ Game.prototype.getFocus = function() {
 Game.prototype.printGameScreen = function() {
   pokemonSection.innerHTML = `  
   <div class="player-status">
-  <h3> Points: ${this.player.points}</h3>
-  <h3> lives: ${this.player.lives}</h3>
+  <h3> <i class="far fa-heart">${this.player.lives}</i> </h3>
+  <h3> <i class="fas fa-trophy">${this.player.points}</i> </h3>
   
   </div>
     <div id="pokemonName">
@@ -137,7 +137,8 @@ Game.prototype.printGameOverScreen = function() {
     <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
-    pokemonSection.toggle("full-width");
+
+    pokemonSection.classList.add("full-width");
     localStorage.setItem(this.player.name, this.player.points);
   } else {
     pokemonSection.innerHTML = `

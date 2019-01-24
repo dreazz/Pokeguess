@@ -20,9 +20,6 @@ body {
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
-  text-shadow: 3px 0 #3b4cca, 0 4px #3b4cca, -4px 0 #3b4cca, 0 -4px #3b4cca;
-  color: #ffde00;
-  /* margin-bottom: 3rem; */
 }
 
 label {
