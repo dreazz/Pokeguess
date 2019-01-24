@@ -1,9 +1,10 @@
 "use strict";
+
 var main = document.querySelector(".main");
 var blurred = document.querySelector(".blurred");
+var startButton = document.querySelector("#menu-button");
 var pokemonSection = document.querySelector(".screen-main");
 var scoreList = document.getElementsByClassName("dropdown-score");
-var startButton = document.querySelector("#menu-button");
 
 function Game() {
   this.pokemon = new Pokemon();
@@ -50,6 +51,7 @@ Game.prototype.setPokemon = function(data) {
   this.pokemon.setName(data.name);
   this.pokemon.setSprite(data.sprites.front_default);
 };
+
 //printStartScreen declaration
 Game.prototype.printStartScreen = function() {
   pokemonSection.innerHTML = ` 
@@ -57,7 +59,7 @@ Game.prototype.printStartScreen = function() {
   <form class="form">
     <h1>PokeGuess</h1>
     <label for="username">Username</label> 
-    <input type="text" class="user-input player-name" placeholder="ash" autofocus/>
+    <input type="text" class="user-input player-name" placeholder="ash" autofocus>
     <button class="startButton btn">Start Game</button>
   </form>
 <ul>
@@ -83,13 +85,16 @@ Game.prototype.printStartScreen = function() {
 </ul>
 
 `;
-}
+};
+Game.prototype.getFocus = function() {
+  $(".user-input").focus();
+};
 Game.prototype.printGameScreen = function() {
-  console.log(this.pokemon.name + " " + this.isStarted);
   pokemonSection.innerHTML = `  
   <div class="player-status">
   <h3> Points: ${this.player.points}</h3>
   <h3> lives: ${this.player.lives}</h3>
+  
   </div>
     <div id="pokemonName">
     <h1>${this.pokemon.name}</h1>
@@ -98,12 +103,13 @@ Game.prototype.printGameScreen = function() {
     <img class="blurred" src ="${this.pokemon.sprite}"> 
     </div> 
     <form name="myForm" id="pokeForm" class="form" onsubmit="return game.nameCheck()">
-     <input type="text" class="user-input" name="pokeName" placeholder="pikachu" >
+    <input type="text" class="user-input" name="pokeName" placeholder="pikachu" autofocus>
+    
     </form> 
-    </div>
+    
  `;
+ this.getFocus();
 };
-
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
   if (this.player.points === this.maxPoints && this.player.lives > 0) {

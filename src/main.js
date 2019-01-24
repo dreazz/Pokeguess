@@ -4,7 +4,7 @@ var startButton;
 var playerName = document.querySelector(".player-name");
 
  window.addEventListener("load", function() {
-  game = new Game();
+   game = new Game();
   apiCall(); // call the api so i have the data for the game screen
   game.getHighScore();
   game.printStartScreen();
