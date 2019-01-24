@@ -68,7 +68,7 @@ Game.prototype.printStartScreen = function() {
     <div class="dropdown-rules dropdown">
       <h3>Rules</h3>
       <p> Guess the pokemon that will be shown </p>
-      <p>You have 3 trys before you die, i mean ... you lose :)</p>
+      <p>You have 4 trys before you die, i mean ... you lose :)</p>
       <p>Easy Peasy Lemon Squeezy</p>
     </div>
   </li>
@@ -77,6 +77,7 @@ Game.prototype.printStartScreen = function() {
       <div class="dropdown-score dropdown">
       <h3>Highscore</h3>
       <ul class="high-score-list">
+      
       
       </ul>
       </div>
@@ -139,7 +140,7 @@ Game.prototype.printGameOverScreen = function() {
   `;
 
     pokemonSection.classList.add("full-width");
-    localStorage.setItem(this.player.name, this.player.points);
+    window.localStorage.setItem(this.player.name, this.player.points);
   } else {
     pokemonSection.innerHTML = `
   
@@ -148,7 +149,7 @@ Game.prototype.printGameOverScreen = function() {
     <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
-
-    localStorage.setItem(this.player.name, this.player.points);
+    
+    window.localStorage.setItem(this.player.name, this.player.points);
   }
 };

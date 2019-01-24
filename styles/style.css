@@ -143,6 +143,10 @@ label {
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
   padding: 2rem;
 }
+.dropdown h3{
+  color: #ffde00;
+  text-shadow: 2px 0 #3b4cca, 0 2px #3b4cca, -2px 0 #3b4cca, 0 -2px #3b4cca
+}
 
 .rules:hover .dropdown-rules {
   display: block;
@@ -188,6 +192,7 @@ label {
 }
 .win-title{
   margin-bottom: 3rem;
+  margin-top:2rem;
 }
 .lose-title{
   width: 74%;
