@@ -108,7 +108,7 @@ Game.prototype.printGameScreen = function() {
     </form> 
     
  `;
- this.getFocus();
+  this.getFocus();
 };
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
@@ -137,7 +137,7 @@ Game.prototype.printGameOverScreen = function() {
     <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
-
+    pokemonSection.toggle("full-width");
     localStorage.setItem(this.player.name, this.player.points);
   } else {
     pokemonSection.innerHTML = `
