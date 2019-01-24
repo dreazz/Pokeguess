@@ -40,16 +40,16 @@ Game.prototype.nameCheck = function() {
     }
   }
 };
-Game.prototype.getHighScore = function() {
-  myObjDeserialized = JSON.parse(localStorage.player)
-  for (var i in myObjDeserialized) {
-    scoreList.innerHTML = `
-    <li class="score">
-     <h3>${i} </h3>
-    <h3>${myObjDeserialized[(i)]}</h3>
-    </li> `;
-  }
-};
+// Game.prototype.getHighScore = function() {
+//   myObjDeserialized = JSON.parse(localStorage.player)
+//   for (var i in myObjDeserialized) {
+//     scoreList.innerHTML = `
+//     <li class="score">
+//      <h3>${i} </h3>
+//     <h3>${myObjDeserialized[(i)]}</h3>
+//     </li> `;
+//   }
+// };
 //Sets pokemon data from the api
 Game.prototype.setPokemon = function(data) {
   this.pokemon.setName(data.name);
@@ -143,12 +143,12 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
 
-    pokemonSection.classList.add("full-width");
-    myObjSerialized = JSON.stringify({
-      name: this.player.name,
-      points: this.player.points
-    });
-    window.localStorage.setItem("player", myObj);
+    // pokemonSection.classList.add("full-width");
+    // myObjSerialized = JSON.stringify({
+    //   name: this.player.name,
+    //   points: this.player.points
+    // });
+    // window.localStorage.setItem("player", myObjSerialized);
   } else {
     pokemonSection.innerHTML = `
   
@@ -157,10 +157,10 @@ Game.prototype.printGameOverScreen = function() {
     <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
-  myObjSerialized = JSON.stringify({
-      name: this.player.name,
-      points: this.player.points
-    });
-    window.localStorage.setItem("player", myObj);
-  }
+  // myObjSerialized = JSON.stringify({
+  //     name: this.player.name,
+  //     points: this.player.points
+  //   });
+  //   window.localStorage.setItem("player", myObjSerialized);
+  // }
 };
