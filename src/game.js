@@ -162,5 +162,5 @@ Game.prototype.printGameOverScreen = function() {
   //     points: this.player.points
   //   });
   //   window.localStorage.setItem("player", myObjSerialized);
-  // }
+  }
 };
