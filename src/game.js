@@ -102,7 +102,7 @@ Game.prototype.printGameScreen = function() {
   
   </div>
     <div id="pokemonName">
-    <h1>${this.pokemon.name}</h1>
+    <h1>Can you guess it?</h1>
     </div>
     <div id="pokemonImage">
     <img class="blurred" src ="${this.pokemon.sprite}"> 
