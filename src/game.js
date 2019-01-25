@@ -5,6 +5,8 @@ var blurred = document.querySelector(".blurred");
 var startButton = document.querySelector("#menu-button");
 var pokemonSection = document.querySelector(".screen-main");
 var scoreList = document.getElementsByClassName("high-score-list");
+var failures = document.querySelector(".failures");
+var failuresArr = [];
 var myObjSerialized;
 var myObjDeserialized;
 function Game() {
@@ -31,10 +33,14 @@ Game.prototype.nameCheck = function() {
       this.printGameScreen();
     }
   } else {
-    if (this.player.lives === 0) {
+    failuresArr.push(this.pokemon.name)
+
+      failures.innerHTML = failuresArr;
+    if (this.player.lives <=1) {
       this.printGameOverScreen();
     } else {
-      console.log(this.pokemon.name)
+      
+
       this.player.lives -= 1;
       apiCall();
       this.printGameScreen();
@@ -59,6 +65,9 @@ Game.prototype.setPokemon = function(data) {
 
 //printStartScreen declaration
 Game.prototype.printStartScreen = function() {
+  if(this.player.lives <= 1){
+    this.printGameOverScreen();
+  }else{
   pokemonSection.innerHTML = ` 
   
   <form class="form">
@@ -91,6 +100,7 @@ Game.prototype.printStartScreen = function() {
 </ul>
 
 `;
+  }
 };
 Game.prototype.getFocus = function() {
   $(".user-input").focus();
@@ -98,12 +108,16 @@ Game.prototype.getFocus = function() {
 Game.prototype.printGameScreen = function() {
   pokemonSection.innerHTML = `  
   <div class="player-status">
-  <div class="game-icon"> <i class="far fa-heart"><span>${this.player.lives}</span></i> </div>
-  <div class="game-icon"> <i class="fas fa-trophy"><span>${this.player.points}</span></i> </div>
+  <div class="game-icon"> <i class="far fa-heart"><span>${
+    this.player.lives
+  }</span></i> </div>
+  <div class="game-icon"> <i class="fas fa-trophy"><span>${
+    this.player.points
+  }</span></i> </div>
   
   </div>
     <div id="pokemonName">
-    <h1> Can you guess it? ${this.pokemon.name}</h1>
+    <h1> Can you guess it? </h1>
     </div>
     <div id="pokemonImage">
     <img class="blurred" src ="${this.pokemon.sprite}"> 
@@ -113,13 +127,13 @@ Game.prototype.printGameScreen = function() {
     
     </form> 
     
+    
  `;
   this.getFocus();
-  
 };
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
-  if (this.player.points === this.maxPoints && this.player.lives >= 0) {
+  if (this.player.points === this.maxPoints && this.player.lives > 1) {
     setTimeout(confetti, 800);
 
     pokemonSection.innerHTML = `
@@ -159,10 +173,10 @@ Game.prototype.printGameOverScreen = function() {
     <!--<button class="startButton btn">Play Again</button>-->
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
-  // myObjSerialized = JSON.stringify({
-  //     name: this.player.name,
-  //     points: this.player.points
-  //   });
-  //   window.localStorage.setItem("player", myObjSerialized);
+    // myObjSerialized = JSON.stringify({
+    //     name: this.player.name,
+    //     points: this.player.points
+    //   });
+    //   window.localStorage.setItem("player", myObjSerialized);
   }
 };
