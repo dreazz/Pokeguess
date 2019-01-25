@@ -11,7 +11,7 @@ function Game() {
   this.pokemon = new Pokemon();
   this.player = new Player();
   this.isStarted = false; //detects if game is started
-  this.maxPoints = 5;
+  this.maxPoints = 6;
 }
 Game.prototype.hall = function() {
   return this.pokemon.hallOfFame;
@@ -119,7 +119,7 @@ Game.prototype.printGameScreen = function() {
 };
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
-  if (this.player.points === this.maxPoints && this.player.lives > 0) {
+  if (this.player.points === this.maxPoints && this.player.lives >= 0) {
     setTimeout(confetti, 800);
 
     pokemonSection.innerHTML = `
@@ -145,7 +145,7 @@ Game.prototype.printGameOverScreen = function() {
     <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
   `;
 
-    // pokemonSection.classList.add("full-width");
+    pokemonSection.classList.add("full-width");
     // myObjSerialized = JSON.stringify({
     //   name: this.player.name,
     //   points: this.player.points
