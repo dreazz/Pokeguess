@@ -11,7 +11,7 @@ function Game() {
   this.pokemon = new Pokemon();
   this.player = new Player();
   this.isStarted = false; //detects if game is started
-  this.maxPoints = 6;
+  this.maxPoints = 5;
 }
 Game.prototype.hall = function() {
   return this.pokemon.hallOfFame;
@@ -34,6 +34,7 @@ Game.prototype.nameCheck = function() {
     if (this.player.lives === 0) {
       this.printGameOverScreen();
     } else {
+      console.log(this.pokemon.name)
       this.player.lives -= 1;
       apiCall();
       this.printGameScreen();
@@ -102,7 +103,7 @@ Game.prototype.printGameScreen = function() {
   
   </div>
     <div id="pokemonName">
-    <h1>Can you guess it?</h1>
+    <h1> Can you guess it? ${this.pokemon.name}</h1>
     </div>
     <div id="pokemonImage">
     <img class="blurred" src ="${this.pokemon.sprite}"> 
@@ -114,6 +115,7 @@ Game.prototype.printGameScreen = function() {
     
  `;
   this.getFocus();
+  
 };
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
