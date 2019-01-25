@@ -21,26 +21,25 @@ Game.prototype.hall = function() {
 //checks the player imput with the name of the pokemon
 Game.prototype.nameCheck = function() {
   if (myForm.pokeName.value === this.pokemon.name) {
+    this.player.points += 1;
+    this.pokemon.hallOfFame.push({
+      name: this.pokemon.name,
+      sprite: this.pokemon.sprite
+    });
+
     if (this.player.points === this.maxPoints) {
       this.printGameOverScreen();
     } else {
-      this.pokemon.hallOfFame.push({
-        name: this.pokemon.name,
-        sprite: this.pokemon.sprite
-      });
-      this.player.points += 1;
       apiCall();
       this.printGameScreen();
     }
   } else {
-    failuresArr.push(this.pokemon.name)
+    failuresArr.push(this.pokemon.name);
 
-      failures.innerHTML = failuresArr;
-    if (this.player.lives <=1) {
+    failures.innerHTML = failuresArr;
+    if (this.player.lives <= 1) {
       this.printGameOverScreen();
     } else {
-      
-
       this.player.lives -= 1;
       apiCall();
       this.printGameScreen();
@@ -65,9 +64,7 @@ Game.prototype.setPokemon = function(data) {
 
 //printStartScreen declaration
 Game.prototype.printStartScreen = function() {
-  if(this.player.lives <= 1){
-    this.printGameOverScreen();
-  }else{
+  this.printGameOverScreen();
   pokemonSection.innerHTML = ` 
   
   <form class="form">
@@ -100,7 +97,6 @@ Game.prototype.printStartScreen = function() {
 </ul>
 
 `;
-  }
 };
 Game.prototype.getFocus = function() {
   $(".user-input").focus();
@@ -133,7 +129,7 @@ Game.prototype.printGameScreen = function() {
 };
 Game.prototype.printGameOverScreen = function() {
   game.isStarted = false;
-  if (this.player.points === this.maxPoints && this.player.lives > 1) {
+  if (this.player.points === this.maxPoints && this.player.lives >= 1) {
     setTimeout(confetti, 800);
 
     pokemonSection.innerHTML = `
