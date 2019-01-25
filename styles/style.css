@@ -190,8 +190,9 @@ label {
   margin: 1rem;
   color: black;
 }
+
 .failures {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   font-family: "Pokemon", "Missigno", Arial, Helvetica, sans-serif;
@@ -206,8 +207,12 @@ label {
   color: white;
   padding: 1rem;
 }
+.display {
+  display: flex;
+}
 
 /******** GAME OVER **************/
+
 .missigno {
   font-family: "missigno";
 }

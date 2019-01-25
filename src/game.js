@@ -102,6 +102,7 @@ Game.prototype.getFocus = function() {
   $(".user-input").focus();
 };
 Game.prototype.printGameScreen = function() {
+  failures.classList.add("display");
   pokemonSection.innerHTML = `  
   <div class="player-status">
   <div class="game-icon"> <i class="far fa-heart"><span>${
@@ -152,7 +153,7 @@ Game.prototype.printGameOverScreen = function() {
       <img src="${this.pokemon.hallOfFame[5].sprite}" >
     </div>
     <!--<button class="startButton btn">Play Again</button>-->
-    <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
+    <button class="startButton btn" onclick="window.location.reload()">Menu</button>
   `;
 
     pokemonSection.classList.add("full-width");
@@ -167,7 +168,7 @@ Game.prototype.printGameOverScreen = function() {
     <h1 class="header-game-over lose-title"> You suck so bad that you hurt yourself</h1>
     <img class="img-game-over" src="https://pbs.twimg.com/profile_images/498674423357251585/cD4IfiPQ_400x400.jpeg">
     <!--<button class="startButton btn">Play Again</button>-->
-    <button class="startButton btn" onclick="game.printStartScreen()">Menu</button>
+    <button class="startButton btn" onclick="window.location.reload()">Menu</button>
   `;
     // myObjSerialized = JSON.stringify({
     //     name: this.player.name,
